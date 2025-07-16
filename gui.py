@@ -1,25 +1,26 @@
-# gui.py  ── revamped “Create FA” for beginners
+# gui.py  ── "Create FA" without "Copy ε" button
 import tkinter as tk, re
 import ttkbootstrap as tb
 from ttkbootstrap.dialogs import Messagebox
+from ttkbootstrap.tableview import Tableview
 from automaton_manager import manage_automaton
 
 
 class AutomatonGUI:
     def __init__(self, root: tk.Tk):
         self.root = root
-        root.title("🌀 Finite Automaton Designer")
+        root.title("🌀 Finite Automaton Designer")
         root.geometry("920x640")
-        tb.Label(root, text="🧙‍♂️ Finite Automaton Visual Tool",
+        tb.Label(root, text="🧙‍♂️ Finite Automaton Visual Tool",
                  font=("Georgia", 20, "bold"), bootstyle="info").pack(pady=10)
 
         top = tb.Frame(root); top.pack()
-        for txt, fn in [("🆕 Create FA", self.create_fa),
-                        ("📂 Load FA", self.load_fa),
-                        ("🧪 Simulate", self.sim_selected),
-                        ("🔎 Check Type", self.check_type),
-                        ("⚙ Convert", self.convert),
-                        ("🔧 Minimize", self.minimize)]:
+        for txt, fn in [("🆕 Create FA", self.create_fa),
+                        ("📂 Load FA", self.load_fa),
+                        ("🧪 Simulate", self.sim_selected),
+                        ("🔎 Check Type", self.check_type),
+                        ("⚙ Convert", self.convert),
+                        ("🔧 Minimize", self.minimize)]:
             tb.Button(top, text=txt, command=fn, bootstyle="info").pack(side="left", padx=5)
 
         cols = ("DB‑ID", "Public‑ID", "Name", "#States", "#Σ", "#δ")
@@ -54,7 +55,7 @@ class AutomatonGUI:
         self.out.insert("end", f"States: {', '.join(sorted(fa.states))}\n")
         self.out.insert("end", f"Alphabet: {', '.join(sorted(fa.alphabet))}\n")
         self.out.insert("end", f"Start: {fa.start_state}\n")
-        self.out.insert("end", f"Accept: {', '.join(sorted(fa.accept_states))}\n\nTransitions:\n")
+        self.out.insert("end", f"Final: {', '.join(sorted(fa.accept_states))}\n\nTransitions:\n")
         for s in sorted(fa.transitions):
             for sym, dst in fa.transitions[s].items():
                 dsttxt = dst if isinstance(dst, str) else ",".join(sorted(dst))
@@ -64,99 +65,166 @@ class AutomatonGUI:
     # ──────────────────────────────────────────────────────────────────────────
     # Create FA
     def create_fa(self):
-        dlg = tb.Toplevel(self.root); dlg.title("Create Finite Automaton")
-        dlg.geometry("770x460"); dlg.grab_set()
+        dlg = tb.Toplevel(self.root); dlg.title("Create Finite Automaton")
+        dlg.geometry("900x600"); dlg.grab_set()
 
-        def add_row(lbl, row, widget):
+        def add_row(lbl, row, widget, example=None):
             tb.Label(dlg, text=lbl, font=("Georgia", 12)).grid(row=row, column=0, sticky="e", padx=6, pady=3)
             widget.grid(row=row, column=1, sticky="w", padx=6, pady=3)
+            if example:
+                tb.Label(dlg, text=f"e.g., {example}", font=("Georgia", 10), bootstyle="secondary").grid(row=row, column=2, sticky="w", padx=6, pady=3)
 
         name_e   = tb.Entry(dlg, width=28)
-        states_e = tb.Entry(dlg, width=28)      # csv
-        alpha_e  = tb.Entry(dlg, width=28)      # csv
+        states_e = tb.Entry(dlg, width=28)      # space-separated
+        alpha_e  = tb.Entry(dlg, width=28)      # space-separated
         start_e  = tb.Entry(dlg, width=28)
-        accept_e = tb.Entry(dlg, width=28)
+        final_e  = tb.Entry(dlg, width=28)      # space-separated
         isdfa_v  = tk.BooleanVar(value=False)
         isdfa_cb = tb.Checkbutton(dlg, text="Deterministic ?", variable=isdfa_v, bootstyle="success")
 
-        add_row("Name:",                0, name_e)
-        add_row("States (csv):",        1, states_e)
-        add_row("Alphabet (csv):",      2, alpha_e)
-        add_row("Start state:",         3, start_e)
-        add_row("Accept states (csv):", 4, accept_e)
+        add_row("Name:",                0, name_e,   "MyAutomaton")
+        add_row("States (space-separated):", 1, states_e, "A B C")
+        add_row("Alphabet (space-separated):", 2, alpha_e,  "a c")
+        add_row("Start state:",         3, start_e,  "A")
+        add_row("Final states (space-separated):", 4, final_e, "C")
         add_row("",                     5, isdfa_cb)
 
-        # Transitions box with placeholder example
-        tb.Label(dlg, text="Transitions (e.g. q0, a → q1,q2):",
-                 font=("Georgia", 12)).grid(row=6, column=0, sticky="ne", padx=6, pady=3)
-        trans_t = tk.Text(dlg, height=8, width=40, font=("Consolas", 10))
-        trans_t.insert("1.0", "q0, a → q0\nq0, a → q1\nq1, b → q2\n")
-        trans_t.grid(row=6, column=1, sticky="w")
+        # Transitions frame with dynamic grid
+        trans_frame = tb.Frame(dlg)
+        trans_frame.grid(row=6, column=0, columnspan=3, sticky="nsew", padx=10, pady=10)
+        trans_label = tb.Label(trans_frame, text="Transitions (e.g., a: B,C or - for none):", font=("Georgia", 12))
+        trans_label.grid(row=0, column=0, columnspan=2, sticky="w", padx=10, pady=5)
+        trans_status = tb.Label(trans_frame, text="Enter states and alphabet to define transitions.", font=("Consolas", 10), bootstyle="warning")
+        trans_status.grid(row=1, column=0, columnspan=2, sticky="w", padx=10, pady=5)
+
+        # Dictionary to store transition entries
+        trans_entries = {}
+        trans_labels = []
+
+        def update_trans_grid(*args):
+            # Clear existing widgets except label and status
+            for widget in trans_frame.grid_slaves():
+                if widget not in (trans_label, trans_status):
+                    widget.destroy()
+            trans_entries.clear()
+            trans_labels.clear()
+
+            states = [s.strip() for s in states_e.get().split() if s.strip()]
+            alpha = [s.strip() for s in alpha_e.get().split() if s.strip()]
+            if not (states and alpha):
+                trans_status.config(text="Enter states and alphabet to define transitions.")
+                return
+
+            trans_status.config(text="Define transitions (e.g., a: B,C; ε: B for epsilon):")
+            row_idx = 2  # Start after label and status
+            for state in states:
+                lbl = tb.Label(trans_frame, text=f"State {state}:", font=("Consolas", 10, "bold"))
+                lbl.grid(row=row_idx, column=0, sticky="e", padx=10, pady=5)
+                trans_labels.append(lbl)
+                row_idx += 1
+                for sym in alpha + (["ε"] if not isdfa_v.get() else []):
+                    lbl = tb.Label(trans_frame, text=f"{sym}:", font=("Consolas", 10))
+                    lbl.grid(row=row_idx, column=0, sticky="e", padx=20, pady=2)
+                    entry = tb.Entry(trans_frame, width=20)
+                    entry.grid(row=row_idx, column=1, sticky="w", padx=10, pady=2)
+                    entry.focus_set()  # Ensure entries can gain focus
+                    trans_entries[(state, sym)] = entry
+                    trans_labels.append(lbl)
+                    # Example values for first state
+                    if state == states[0] and sym == alpha[0]:
+                        entry.insert(0, "B,C")
+                    elif state == states[0] and sym == "ε":
+                        entry.insert(0, "-")
+                    row_idx += 1
+
+        # Bind updates to state, alphabet, and DFA checkbox changes
+        states_e.bind("<KeyRelease>", update_trans_grid)
+        alpha_e.bind("<KeyRelease>", update_trans_grid)
+        isdfa_v.trace("w", update_trans_grid)
+        update_trans_grid()  # Initial grid setup
 
         # Help pane
         help_txt = (
-            "💡 Quick Primer\n"
-            "• Format each line:\n"
-            "    from_state, symbol → to_state[,to_state]\n"
-            "• Multiple targets = NFA.\n"
-            "• Use ‘ε’ for epsilon moves.\n"
-            "• Separate states or symbols with commas.\n"
-            "• Example above accepts strings ending in “ab”."
+            "💡 Quick Primer\n"
+            "• States: Separate with spaces (e.g., A B C)\n"
+            "• Alphabet: Separate with spaces (e.g., a c). Do not include ε\n"
+            "• Transitions: For each state and symbol, enter target state(s)\n"
+            "  - Use commas for multiple targets (e.g., B,C)\n"
+            "  - Use '-' for no transition\n"
+            "  - For ε fields (NFA only), enter target states (e.g., B or B,C)\n"
+            "• Example: State A, a: B,C; ε: B (epsilon to B)\n"
+            "• Example above accepts strings with 'a' or ε to B"
         )
         tb.Label(dlg, text=help_txt, justify="left", font=("Consolas", 9),
-                 bootstyle="secondary").grid(row=0, column=2, rowspan=7, sticky="nsw", padx=10)
+                 bootstyle="secondary").grid(row=0, column=3, rowspan=7, sticky="nsw", padx=10)
 
         # ── parsing helper
-        def parse_transitions(txt, states, alpha, isdfa):
+        def parse_transitions(entries, states, alpha, isdfa):
             transitions = {s: {} for s in states}
-            line_re = re.compile(r"^\s*([^,]+)\s*,\s*([^→\-]+?)\s*[-­→]+\s*(.+?)\s*$")
-            for ln_no, line in enumerate(filter(None, txt.splitlines()), 1):
-                m = line_re.match(line)
-                if not m:
-                    raise ValueError(f"Line {ln_no}: bad format.")
-                src, sym, dst_blob = m.groups()
-                src, sym = src.strip(), sym.strip()
-                dsts = [d.strip() for d in dst_blob.split(",") if d.strip()]
-                if src not in states:
-                    raise ValueError(f"Line {ln_no}: unknown state {src}.")
-                if sym != "ε" and sym not in alpha:
-                    raise ValueError(f"Line {ln_no}: symbol {sym} not in alphabet.")
-                if not all(d in states for d in dsts):
-                    raise ValueError(f"Line {ln_no}: unknown target state.")
-                if isdfa and len(dsts) != 1:
-                    raise ValueError(f"Line {ln_no}: DFA must have exactly 1 target.")
-                transitions[src].setdefault(sym, [] if not isdfa else None)
-                if isdfa:
-                    transitions[src][sym] = dsts[0]
-                else:
-                    transitions[src][sym].extend(dsts)
+            for state in states:
+                for sym in alpha + (["ε"] if not isdfa else []):
+                    val = entries.get((state, sym), tb.Entry(dlg)).get().strip()
+                    print(f"Parsing transition for {state}, {sym}: {val}")  # Debug
+                    if not val or val == "-":
+                        continue
+                    if val == "ε":
+                        raise ValueError(f"Invalid input for {state}, {sym}: 'ε' is not a valid target state. Enter a state (e.g., B or B,C).")
+                    dsts = [d.strip() for d in val.split(",") if d.strip()]
+                    if not all(d in states for d in dsts):
+                        raise ValueError(f"Invalid target state for {state}, {sym}: {val}. Targets must be in {states}.")
+                    if sym != "ε" and sym not in alpha:
+                        raise ValueError(f"Symbol {sym} not in alphabet for {state}")
+                    if isdfa and len(dsts) > 1:
+                        raise ValueError(f"DFA cannot have multiple targets for {state}, {sym}")
+                    transitions[state][sym] = dsts[0] if isdfa else dsts
             return transitions
 
         # ── submit
         def submit():
-            name   = name_e.get().strip() or "Untitled"
-            states = [s.strip() for s in states_e.get().split(",") if s.strip()]
-            alpha  = [s.strip() for s in alpha_e.get().split(",") if s.strip()]
-            start  = start_e.get().strip()
-            accept = [s.strip() for s in accept_e.get().split(",") if s.strip()]
-            isdfa  = isdfa_v.get()
-            if not (states and alpha and start and accept):
-                return Messagebox.show_error("All fields required.")
-            if start not in states or not set(accept).issubset(states):
-                return Messagebox.show_error("Start/Accept states invalid.")
+            name = name_e.get().strip() or "Untitled"
+            states = [s.strip() for s in states_e.get().split() if s.strip()]
+            alpha = [s.strip() for s in alpha_e.get().split() if s.strip()]
+            start = start_e.get().strip()
+            final = [s.strip() for s in final_e.get().split() if s.strip()]
+            isdfa = isdfa_v.get()
+            if not (states and alpha and start and final):
+                return Messagebox.show_error("All fields required.")
+            if start not in states or not set(final).issubset(states):
+                return Messagebox.show_error("Start/Final states invalid.")
             try:
-                transitions = parse_transitions(trans_t.get("1.0", "end"),
-                                                states, alpha, isdfa)
+                transitions = parse_transitions(trans_entries, states, alpha, isdfa)
             except ValueError as e:
                 return Messagebox.show_error(str(e))
             res = manage_automaton(action="create", name=name, states=states,
                                    alphabet=alpha, start_state=start,
-                                   accept_states=accept, is_dfa=isdfa,
+                                   accept_states=final, is_dfa=isdfa,
                                    transitions=transitions)
             if "error" in res:
                 return Messagebox.show_error(res["error"])
-            self.current = res["automaton"]; self.display(self.current)
-            self.refresh(); dlg.destroy(); Messagebox.show_info("Automaton saved!")
+            self.current = res["automaton"]
+            self.display(self.current)
+            self.refresh()
+
+            # Show confirmation and transition table
+            confirm_dlg = tb.Toplevel(self.root)
+            confirm_dlg.title("Automaton Created")
+            confirm_dlg.geometry("600x400")
+            tb.Label(confirm_dlg, text="Automaton saved successfully!", font=("Georgia", 12), bootstyle="success").pack(pady=10)
+
+            # Transition table
+            cols = ["State"] + alpha + (["ε"] if not isdfa else [])
+            rows = []
+            for state in sorted(states):
+                row = [state]
+                for sym in alpha + (["ε"] if not isdfa else []):
+                    dst = transitions.get(state, {}).get(sym, "-")
+                    row.append(dst if isinstance(dst, str) else ",".join(sorted(dst)) if dst else "-")
+                rows.append(row)
+            table = Tableview(confirm_dlg, coldata=cols, rowdata=rows, bootstyle="dark", autofit=True)
+            table.pack(fill="both", expand=True, padx=10, pady=10)
+            tb.Button(confirm_dlg, text="Close", bootstyle="danger", command=confirm_dlg.destroy).pack(pady=5)
+
+            dlg.destroy()
 
         tb.Button(dlg, text="Save", bootstyle="success", command=submit)\
            .grid(row=7, column=1, sticky="e", pady=8, padx=5)
@@ -164,7 +232,7 @@ class AutomatonGUI:
            .grid(row=7, column=1, sticky="w", pady=8, padx=5)
 
     # ──────────────────────────────────────────────────────────────────────────
-    # Other toolbar actions (short, unchanged)
+    # Other toolbar actions (unchanged)
     def load_fa(self):
         sel = self.table.selection()
         pid = self.table.item(sel[0])["values"][1] if sel else None
