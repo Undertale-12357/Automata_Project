@@ -1,0 +1,490 @@
+2025-07-20 19:07:54,024 - INFO - Starting application
+2025-07-20 19:07:54,031 - INFO - Database connection established
+2025-07-20 19:07:54,031 - INFO - Initializing database
+2025-07-20 19:07:54,035 - INFO - Automata table schema is outdated, dropping and recreating
+2025-07-20 19:07:54,070 - INFO - Database schema initialized successfully
+2025-07-20 19:07:54,071 - INFO - Verified Automata table columns: ['id', 'name', 'states', 'alphabet', 'transitions', 'start_state', 'final_states', 'fa_type']
+2025-07-20 19:07:54,785 - INFO - Initializing FADatabase
+2025-07-20 19:07:54,786 - INFO - Database connection established
+2025-07-20 19:07:54,786 - INFO - Verifying database schema
+2025-07-20 19:07:54,786 - INFO - Foreign key in Automaton_Conversions: [(0, 0, 'Automata', 'result_id', 'id', 'NO ACTION', 'CASCADE', 'NONE'), (1, 0, 'Automata', 'source_id', 'id', 'NO ACTION', 'CASCADE', 'NONE')]
+2025-07-20 19:07:54,786 - INFO - Loading all FAs
+2025-07-20 19:07:54,786 - INFO - Loading all FAs from database
+2025-07-20 19:07:54,786 - INFO - Loaded 0 FAs from database
+2025-07-20 19:07:54,794 - INFO - Running main application loop
+2025-07-20 19:07:59,737 - INFO - Closing database connection
+2025-07-20 19:07:59,737 - INFO - Closing database connection
+2025-07-20 19:07:59,907 - INFO - Starting application
+2025-07-20 19:07:59,908 - INFO - Database connection established
+2025-07-20 19:07:59,908 - INFO - Initializing database
+2025-07-20 19:07:59,908 - INFO - Database schema initialized successfully
+2025-07-20 19:07:59,908 - INFO - Verified Automata table columns: ['id', 'name', 'states', 'alphabet', 'transitions', 'start_state', 'final_states', 'fa_type']
+2025-07-20 19:07:59,997 - INFO - Initializing FADatabase
+2025-07-20 19:07:59,997 - INFO - Database connection established
+2025-07-20 19:07:59,997 - INFO - Verifying database schema
+2025-07-20 19:07:59,998 - INFO - Foreign key in Automaton_Conversions: [(0, 0, 'Automata', 'result_id', 'id', 'NO ACTION', 'CASCADE', 'NONE'), (1, 0, 'Automata', 'source_id', 'id', 'NO ACTION', 'CASCADE', 'NONE')]
+2025-07-20 19:07:59,998 - INFO - Loading all FAs
+2025-07-20 19:07:59,998 - INFO - Loading all FAs from database
+2025-07-20 19:07:59,998 - INFO - Loaded 0 FAs from database
+2025-07-20 19:08:00,003 - INFO - Running main application loop
+2025-07-20 19:08:01,486 - INFO - Closing database connection
+2025-07-20 19:08:01,486 - INFO - Closing database connection
+2025-07-20 19:55:40,681 - INFO - Starting application
+2025-07-20 19:55:40,682 - INFO - Database connection established
+2025-07-20 19:55:40,682 - INFO - Initializing database
+2025-07-20 19:55:40,682 - INFO - Database schema initialized successfully
+2025-07-20 19:55:40,683 - INFO - Verified Automata table columns: ['id', 'name', 'states', 'alphabet', 'transitions', 'start_state', 'final_states', 'fa_type']
+2025-07-20 19:55:40,785 - INFO - Initializing FADatabase
+2025-07-20 19:55:40,786 - INFO - Database connection established
+2025-07-20 19:55:40,786 - INFO - Verifying database schema
+2025-07-20 19:55:40,786 - INFO - Foreign key in Automaton_Conversions: [(0, 0, 'Automata', 'result_id', 'id', 'NO ACTION', 'CASCADE', 'NONE'), (1, 0, 'Automata', 'source_id', 'id', 'NO ACTION', 'CASCADE', 'NONE')]
+2025-07-20 19:55:40,786 - INFO - Loading all FAs
+2025-07-20 19:55:40,786 - INFO - Loading all FAs from database
+2025-07-20 19:55:40,786 - INFO - Loaded 0 FAs from database
+2025-07-20 19:55:40,793 - INFO - Running main application loop
+2025-07-20 19:55:51,701 - INFO - Building transitions grid
+2025-07-20 19:55:51,702 - INFO - No states or alphabet entered, showing placeholder
+2025-07-20 19:56:21,710 - INFO - Building transitions grid
+2025-07-20 19:56:21,713 - INFO - States: ['q'], Alphabet: ['\u03b5']
+2025-07-20 19:56:21,720 - INFO - Transitions grid built successfully
+2025-07-20 19:56:21,956 - INFO - Building transitions grid
+2025-07-20 19:56:21,958 - INFO - States: ['q0'], Alphabet: ['\u03b5']
+2025-07-20 19:56:21,964 - INFO - Transitions grid built successfully
+2025-07-20 19:56:23,143 - INFO - Building transitions grid
+2025-07-20 19:56:23,145 - INFO - States: ['q0'], Alphabet: ['\u03b5']
+2025-07-20 19:56:23,151 - INFO - Transitions grid built successfully
+2025-07-20 19:56:23,486 - INFO - Building transitions grid
+2025-07-20 19:56:23,488 - INFO - States: ['q0', 'q'], Alphabet: ['\u03b5']
+2025-07-20 19:56:23,496 - INFO - Transitions grid built successfully
+2025-07-20 19:56:23,722 - INFO - Building transitions grid
+2025-07-20 19:56:23,726 - INFO - States: ['q0', 'q1'], Alphabet: ['\u03b5']
+2025-07-20 19:56:23,733 - INFO - Transitions grid built successfully
+2025-07-20 19:56:25,650 - INFO - Building transitions grid
+2025-07-20 19:56:25,652 - INFO - States: ['q0', 'q1'], Alphabet: ['a', '\u03b5']
+2025-07-20 19:56:25,663 - INFO - Transitions grid built successfully
+2025-07-20 19:56:25,891 - INFO - Building transitions grid
+2025-07-20 19:56:25,894 - INFO - States: ['q0', 'q1'], Alphabet: ['a', '\u03b5']
+2025-07-20 19:56:25,905 - INFO - Transitions grid built successfully
+2025-07-20 19:56:26,041 - INFO - Building transitions grid
+2025-07-20 19:56:26,045 - INFO - States: ['q0', 'q1'], Alphabet: ['a', 'b', '\u03b5']
+2025-07-20 19:56:26,059 - INFO - Transitions grid built successfully
+2025-07-20 19:58:50,615 - INFO - Saving FA: Name=test1, States=['q0', 'q1'], Alphabet=['a', 'b'], Start=q0, Final=['q1']
+2025-07-20 19:58:50,615 - INFO - Generating next FA ID
+2025-07-20 19:58:50,615 - INFO - Generated new FA ID: 0001
+2025-07-20 19:58:50,615 - INFO - Initialized FA 0001 as NFA
+2025-07-20 19:58:50,616 - INFO - Saving new FA with ID 0001
+2025-07-20 19:58:50,616 - INFO - Attempting to save FA with ID 0001
+2025-07-20 19:58:50,617 - INFO - Inserted FA 0001 into Automata table
+2025-07-20 19:58:50,618 - INFO - Deleted existing transitions for FA 0001
+2025-07-20 19:58:50,618 - INFO - Inserted transitions for FA 0001
+2025-07-20 19:58:50,624 - INFO - FA 0001 saved successfully
+2025-07-20 19:58:50,624 - INFO - Loading FAs after saving 0001
+2025-07-20 19:58:50,624 - INFO - Loading all FAs from database
+2025-07-20 19:58:50,625 - INFO - Initialized FA 0001 as NFA
+2025-07-20 19:58:50,625 - INFO - Loaded FA 0001 successfully
+2025-07-20 19:58:50,625 - INFO - Loaded 1 FAs from database
+2025-07-20 19:58:50,625 - INFO - Checking if FA 0001 is DFA
+2025-07-20 19:58:50,625 - INFO - FA 0001 is DFA
+2025-07-20 19:58:51,596 - INFO - FA 0001 created successfully: Type=DFA
+2025-07-20 19:59:24,431 - INFO - Simulating input 'aba' on FA 0001
+2025-07-20 19:59:24,431 - INFO - Simulating input 'aba' on FA 0001
+2025-07-20 19:59:24,431 - INFO - Simulation result for FA 0001: REJECTED
+2025-07-20 19:59:24,431 - INFO - Saving input test for FA 0001: input=aba, accepted=False
+2025-07-20 19:59:24,440 - INFO - Input test saved for FA 0001
+2025-07-20 19:59:24,440 - INFO - Simulation result for 0001: REJECTED
+2025-07-20 19:59:33,815 - INFO - Building transitions grid
+2025-07-20 19:59:33,815 - INFO - No states or alphabet entered, showing placeholder
+2025-07-20 19:59:52,610 - INFO - Building transitions grid
+2025-07-20 19:59:52,611 - INFO - States: ['q'], Alphabet: ['\u03b5']
+2025-07-20 19:59:52,617 - INFO - Transitions grid built successfully
+2025-07-20 19:59:52,777 - INFO - Building transitions grid
+2025-07-20 19:59:52,779 - INFO - States: ['q9'], Alphabet: ['\u03b5']
+2025-07-20 19:59:52,784 - INFO - Transitions grid built successfully
+2025-07-20 19:59:53,204 - INFO - Building transitions grid
+2025-07-20 19:59:53,206 - INFO - States: ['q9m'], Alphabet: ['\u03b5']
+2025-07-20 19:59:53,211 - INFO - Transitions grid built successfully
+2025-07-20 19:59:53,470 - INFO - Building transitions grid
+2025-07-20 19:59:53,472 - INFO - States: ['q9m='], Alphabet: ['\u03b5']
+2025-07-20 19:59:53,478 - INFO - Transitions grid built successfully
+2025-07-20 19:59:53,602 - INFO - Building transitions grid
+2025-07-20 19:59:53,604 - INFO - States: ['q9m=='], Alphabet: ['\u03b5']
+2025-07-20 19:59:53,609 - INFO - Transitions grid built successfully
+2025-07-20 19:59:53,803 - INFO - Building transitions grid
+2025-07-20 19:59:53,805 - INFO - States: ['q9m='], Alphabet: ['\u03b5']
+2025-07-20 19:59:53,810 - INFO - Transitions grid built successfully
+2025-07-20 19:59:53,933 - INFO - Building transitions grid
+2025-07-20 19:59:53,935 - INFO - States: ['q9m'], Alphabet: ['\u03b5']
+2025-07-20 19:59:53,940 - INFO - Transitions grid built successfully
+2025-07-20 19:59:54,047 - INFO - Building transitions grid
+2025-07-20 19:59:54,050 - INFO - States: ['q9'], Alphabet: ['\u03b5']
+2025-07-20 19:59:54,055 - INFO - Transitions grid built successfully
+2025-07-20 19:59:54,153 - INFO - Building transitions grid
+2025-07-20 19:59:54,154 - INFO - States: ['q'], Alphabet: ['\u03b5']
+2025-07-20 19:59:54,160 - INFO - Transitions grid built successfully
+2025-07-20 19:59:55,445 - INFO - Building transitions grid
+2025-07-20 19:59:55,447 - INFO - States: ['q0'], Alphabet: ['\u03b5']
+2025-07-20 19:59:55,452 - INFO - Transitions grid built successfully
+2025-07-20 19:59:55,743 - INFO - Building transitions grid
+2025-07-20 19:59:55,745 - INFO - States: ['q0'], Alphabet: ['\u03b5']
+2025-07-20 19:59:55,750 - INFO - Transitions grid built successfully
+2025-07-20 19:59:55,935 - INFO - Building transitions grid
+2025-07-20 19:59:55,937 - INFO - States: ['q0', 'q'], Alphabet: ['\u03b5']
+2025-07-20 19:59:55,945 - INFO - Transitions grid built successfully
+2025-07-20 19:59:56,117 - INFO - Building transitions grid
+2025-07-20 19:59:56,119 - INFO - States: ['q0', 'q1'], Alphabet: ['\u03b5']
+2025-07-20 19:59:56,127 - INFO - Transitions grid built successfully
+2025-07-20 19:59:58,757 - INFO - Building transitions grid
+2025-07-20 19:59:58,759 - INFO - States: ['q0', 'q1'], Alphabet: ['a', '\u03b5']
+2025-07-20 19:59:58,770 - INFO - Transitions grid built successfully
+2025-07-20 19:59:59,107 - INFO - Building transitions grid
+2025-07-20 19:59:59,111 - INFO - States: ['q0', 'q1'], Alphabet: ['ab', '\u03b5']
+2025-07-20 19:59:59,122 - INFO - Transitions grid built successfully
+2025-07-20 19:59:59,941 - INFO - Building transitions grid
+2025-07-20 19:59:59,944 - INFO - States: ['q0', 'q1'], Alphabet: ['a', '\u03b5']
+2025-07-20 19:59:59,955 - INFO - Transitions grid built successfully
+2025-07-20 20:00:00,563 - INFO - Building transitions grid
+2025-07-20 20:00:00,567 - INFO - States: ['q0', 'q1'], Alphabet: ['a', '\u03b5']
+2025-07-20 20:00:00,578 - INFO - Transitions grid built successfully
+2025-07-20 20:00:00,764 - INFO - Building transitions grid
+2025-07-20 20:00:00,769 - INFO - States: ['q0', 'q1'], Alphabet: ['a', 'b', '\u03b5']
+2025-07-20 20:00:00,783 - INFO - Transitions grid built successfully
+2025-07-20 20:00:58,920 - INFO - Saving FA: Name=testing, States=['q0', 'q1'], Alphabet=['a', 'b'], Start=q0, Final=['q1']
+2025-07-20 20:00:58,920 - INFO - Generating next FA ID
+2025-07-20 20:00:58,920 - INFO - Generated new FA ID: 0002
+2025-07-20 20:00:58,920 - INFO - Initialized FA 0002 as NFA
+2025-07-20 20:00:58,920 - INFO - Saving new FA with ID 0002
+2025-07-20 20:00:58,920 - INFO - Attempting to save FA with ID 0002
+2025-07-20 20:00:58,922 - INFO - Inserted FA 0002 into Automata table
+2025-07-20 20:00:58,922 - INFO - Deleted existing transitions for FA 0002
+2025-07-20 20:00:58,922 - INFO - Inserted transitions for FA 0002
+2025-07-20 20:00:58,929 - INFO - FA 0002 saved successfully
+2025-07-20 20:00:58,929 - INFO - Loading FAs after saving 0002
+2025-07-20 20:00:58,929 - INFO - Loading all FAs from database
+2025-07-20 20:00:58,929 - INFO - Initialized FA 0001 as NFA
+2025-07-20 20:00:58,929 - INFO - Loaded FA 0001 successfully
+2025-07-20 20:00:58,929 - INFO - Initialized FA 0002 as NFA
+2025-07-20 20:00:58,929 - INFO - Loaded FA 0002 successfully
+2025-07-20 20:00:58,929 - INFO - Loaded 2 FAs from database
+2025-07-20 20:00:58,929 - INFO - Checking if FA 0002 is DFA
+2025-07-20 20:00:58,929 - INFO - FA 0002 is NFA due to undefined transition: q1 --a--> []
+2025-07-20 20:01:01,390 - INFO - FA 0002 created successfully: Type=NFA
+2025-07-20 20:01:09,559 - INFO - Simulating input 'aba' on FA 0002
+2025-07-20 20:01:09,560 - INFO - Simulating input 'aba' on FA 0002
+2025-07-20 20:01:09,560 - INFO - Simulation result for FA 0002: REJECTED
+2025-07-20 20:01:09,560 - INFO - Saving input test for FA 0002: input=aba, accepted=False
+2025-07-20 20:01:09,568 - INFO - Input test saved for FA 0002
+2025-07-20 20:01:09,568 - INFO - Simulation result for 0002: REJECTED
+2025-07-20 20:01:53,584 - INFO - Building transitions grid
+2025-07-20 20:01:53,585 - INFO - No states or alphabet entered, showing placeholder
+2025-07-20 20:02:00,271 - INFO - Building transitions grid
+2025-07-20 20:02:00,272 - INFO - States: ['q'], Alphabet: ['\u03b5']
+2025-07-20 20:02:00,278 - INFO - Transitions grid built successfully
+2025-07-20 20:02:00,422 - INFO - Building transitions grid
+2025-07-20 20:02:00,424 - INFO - States: ['q0'], Alphabet: ['\u03b5']
+2025-07-20 20:02:00,430 - INFO - Transitions grid built successfully
+2025-07-20 20:02:00,628 - INFO - Building transitions grid
+2025-07-20 20:02:00,630 - INFO - States: ['q0'], Alphabet: ['\u03b5']
+2025-07-20 20:02:00,635 - INFO - Transitions grid built successfully
+2025-07-20 20:02:00,811 - INFO - Building transitions grid
+2025-07-20 20:02:00,813 - INFO - States: ['q0', 'q'], Alphabet: ['\u03b5']
+2025-07-20 20:02:00,821 - INFO - Transitions grid built successfully
+2025-07-20 20:02:01,197 - INFO - Building transitions grid
+2025-07-20 20:02:01,200 - INFO - States: ['q0', 'q1'], Alphabet: ['\u03b5']
+2025-07-20 20:02:01,207 - INFO - Transitions grid built successfully
+2025-07-20 20:02:02,767 - INFO - Building transitions grid
+2025-07-20 20:02:02,770 - INFO - States: ['q0', 'q1'], Alphabet: ['\u03b5']
+2025-07-20 20:02:02,777 - INFO - Transitions grid built successfully
+2025-07-20 20:02:03,139 - INFO - Building transitions grid
+2025-07-20 20:02:03,143 - INFO - States: ['q0', 'q1', 'q'], Alphabet: ['\u03b5']
+2025-07-20 20:02:03,153 - INFO - Transitions grid built successfully
+2025-07-20 20:02:03,336 - INFO - Building transitions grid
+2025-07-20 20:02:03,340 - INFO - States: ['q0', 'q1', 'q2'], Alphabet: ['\u03b5']
+2025-07-20 20:02:03,350 - INFO - Transitions grid built successfully
+2025-07-20 20:02:13,705 - INFO - Building transitions grid
+2025-07-20 20:02:13,708 - INFO - States: ['q0', 'q1', 'q2'], Alphabet: ['0', '\u03b5']
+2025-07-20 20:02:13,722 - INFO - Transitions grid built successfully
+2025-07-20 20:02:14,854 - INFO - Building transitions grid
+2025-07-20 20:02:14,859 - INFO - States: ['q0', 'q1', 'q2'], Alphabet: ['0', '\u03b5']
+2025-07-20 20:02:14,873 - INFO - Transitions grid built successfully
+2025-07-20 20:02:15,421 - INFO - Building transitions grid
+2025-07-20 20:02:15,426 - INFO - States: ['q0', 'q1', 'q2'], Alphabet: ['0', '1', '\u03b5']
+2025-07-20 20:02:15,444 - INFO - Transitions grid built successfully
+2025-07-20 20:03:37,013 - INFO - Building transitions grid
+2025-07-20 20:03:37,020 - INFO - No states or alphabet entered, showing placeholder
+2025-07-20 20:03:37,020 - INFO - Building transitions grid
+2025-07-20 20:03:37,020 - INFO - States: ['x'], Alphabet: ['0', '1', '\u03b5']
+2025-07-20 20:03:37,033 - INFO - Transitions grid built successfully
+2025-07-20 20:03:37,229 - INFO - Building transitions grid
+2025-07-20 20:03:37,234 - INFO - States: ['x'], Alphabet: ['0', '1', '\u03b5']
+2025-07-20 20:03:37,243 - INFO - Transitions grid built successfully
+2025-07-20 20:03:37,610 - INFO - Building transitions grid
+2025-07-20 20:03:37,613 - INFO - States: ['x', 'y'], Alphabet: ['0', '1', '\u03b5']
+2025-07-20 20:03:37,628 - INFO - Transitions grid built successfully
+2025-07-20 20:03:38,677 - INFO - Building transitions grid
+2025-07-20 20:03:38,682 - INFO - States: ['x'], Alphabet: ['0', '1', '\u03b5']
+2025-07-20 20:03:38,692 - INFO - Transitions grid built successfully
+2025-07-20 20:03:38,813 - INFO - Building transitions grid
+2025-07-20 20:03:38,816 - INFO - States: ['x'], Alphabet: ['0', '1', '\u03b5']
+2025-07-20 20:03:38,826 - INFO - Transitions grid built successfully
+2025-07-20 20:03:38,947 - INFO - Building transitions grid
+2025-07-20 20:03:38,952 - INFO - No states or alphabet entered, showing placeholder
+2025-07-20 20:03:40,028 - INFO - Building transitions grid
+2025-07-20 20:03:40,028 - INFO - States: ['A'], Alphabet: ['0', '1', '\u03b5']
+2025-07-20 20:03:40,038 - INFO - Transitions grid built successfully
+2025-07-20 20:03:40,371 - INFO - Building transitions grid
+2025-07-20 20:03:40,374 - INFO - States: ['A'], Alphabet: ['0', '1', '\u03b5']
+2025-07-20 20:03:40,384 - INFO - Transitions grid built successfully
+2025-07-20 20:03:40,637 - INFO - Building transitions grid
+2025-07-20 20:03:40,641 - INFO - States: ['A', 'b'], Alphabet: ['0', '1', '\u03b5']
+2025-07-20 20:03:40,655 - INFO - Transitions grid built successfully
+2025-07-20 20:03:40,921 - INFO - Building transitions grid
+2025-07-20 20:03:40,925 - INFO - States: ['A'], Alphabet: ['0', '1', '\u03b5']
+2025-07-20 20:03:40,935 - INFO - Transitions grid built successfully
+2025-07-20 20:03:41,073 - INFO - Building transitions grid
+2025-07-20 20:03:41,078 - INFO - States: ['A', 'B'], Alphabet: ['0', '1', '\u03b5']
+2025-07-20 20:03:41,093 - INFO - Transitions grid built successfully
+2025-07-20 20:03:41,382 - INFO - Building transitions grid
+2025-07-20 20:03:41,387 - INFO - States: ['A', 'B'], Alphabet: ['0', '1', '\u03b5']
+2025-07-20 20:03:41,401 - INFO - Transitions grid built successfully
+2025-07-20 20:03:41,846 - INFO - Building transitions grid
+2025-07-20 20:03:41,851 - INFO - States: ['A', 'B', 'C'], Alphabet: ['0', '1', '\u03b5']
+2025-07-20 20:03:41,869 - INFO - Transitions grid built successfully
+2025-07-20 20:03:44,664 - INFO - Building transitions grid
+2025-07-20 20:03:44,670 - INFO - States: ['A', 'B', 'C'], Alphabet: ['\u03b5']
+2025-07-20 20:03:44,680 - INFO - Transitions grid built successfully
+2025-07-20 20:03:44,680 - INFO - Building transitions grid
+2025-07-20 20:03:44,682 - INFO - States: ['A', 'B', 'C'], Alphabet: ['x', '\u03b5']
+2025-07-20 20:03:44,702 - INFO - Transitions grid built successfully
+2025-07-20 20:03:45,699 - INFO - Building transitions grid
+2025-07-20 20:03:45,704 - INFO - States: ['A', 'B', 'C'], Alphabet: ['x', '\u03b5']
+2025-07-20 20:03:45,717 - INFO - Transitions grid built successfully
+2025-07-20 20:03:45,972 - INFO - Building transitions grid
+2025-07-20 20:03:45,977 - INFO - States: ['A', 'B', 'C'], Alphabet: ['x', 'y', '\u03b5']
+2025-07-20 20:03:45,995 - INFO - Transitions grid built successfully
+2025-07-20 20:05:47,113 - INFO - Saving FA: Name=t1, States=['A', 'B', 'C'], Alphabet=['x', 'y'], Start=A, Final=['C']
+2025-07-20 20:05:47,114 - INFO - Generating next FA ID
+2025-07-20 20:05:47,114 - INFO - Generated new FA ID: 0003
+2025-07-20 20:05:47,114 - INFO - Initialized FA 0003 as NFA
+2025-07-20 20:05:47,114 - INFO - Saving new FA with ID 0003
+2025-07-20 20:05:47,114 - INFO - Attempting to save FA with ID 0003
+2025-07-20 20:05:47,114 - INFO - Inserted FA 0003 into Automata table
+2025-07-20 20:05:47,114 - INFO - Deleted existing transitions for FA 0003
+2025-07-20 20:05:47,115 - INFO - Inserted transitions for FA 0003
+2025-07-20 20:05:47,121 - INFO - FA 0003 saved successfully
+2025-07-20 20:05:47,121 - INFO - Loading FAs after saving 0003
+2025-07-20 20:05:47,121 - INFO - Loading all FAs from database
+2025-07-20 20:05:47,121 - INFO - Initialized FA 0001 as NFA
+2025-07-20 20:05:47,121 - INFO - Loaded FA 0001 successfully
+2025-07-20 20:05:47,121 - INFO - Initialized FA 0002 as NFA
+2025-07-20 20:05:47,121 - INFO - Loaded FA 0002 successfully
+2025-07-20 20:05:47,121 - INFO - Initialized FA 0003 as NFA
+2025-07-20 20:05:47,121 - INFO - Loaded FA 0003 successfully
+2025-07-20 20:05:47,121 - INFO - Loaded 3 FAs from database
+2025-07-20 20:05:47,121 - INFO - Checking if FA 0003 is DFA
+2025-07-20 20:05:47,122 - INFO - FA 0003 is NFA due to multiple transitions: A --x--> ['A', 'B']
+2025-07-20 20:05:48,007 - INFO - FA 0003 created successfully: Type=NFA
+2025-07-20 20:06:04,362 - INFO - Simulating input 'xx' on FA 0003
+2025-07-20 20:06:04,362 - INFO - Simulating input 'xx' on FA 0003
+2025-07-20 20:06:04,362 - INFO - Simulation result for FA 0003: ACCEPTED
+2025-07-20 20:06:04,362 - INFO - Saving input test for FA 0003: input=xx, accepted=True
+2025-07-20 20:06:04,371 - INFO - Input test saved for FA 0003
+2025-07-20 20:06:04,371 - INFO - Simulation result for 0003: ACCEPTED
+2025-07-20 20:08:01,746 - INFO - Checking type for FA 0003
+2025-07-20 20:08:01,746 - INFO - Checking if FA 0003 is DFA
+2025-07-20 20:08:01,746 - INFO - FA 0003 is NFA due to multiple transitions: A --x--> ['A', 'B']
+2025-07-20 20:08:01,746 - INFO - FA 0003 is NFA
+2025-07-20 20:08:23,123 - INFO - Displaying FA with ID 0003
+2025-07-20 20:08:27,053 - INFO - Checking if FA 0001 is DFA
+2025-07-20 20:08:27,053 - INFO - FA 0001 is DFA
+2025-07-20 20:08:27,053 - INFO - Checking if FA 0002 is DFA
+2025-07-20 20:08:27,053 - INFO - FA 0002 is NFA due to undefined transition: q1 --a--> []
+2025-07-20 20:08:27,053 - INFO - Checking if FA 0003 is DFA
+2025-07-20 20:08:27,053 - INFO - FA 0003 is NFA due to multiple transitions: A --x--> ['A', 'B']
+2025-07-20 20:08:27,053 - INFO - Checking if FA 0001 is DFA
+2025-07-20 20:08:27,053 - INFO - FA 0001 is DFA
+2025-07-20 20:08:27,053 - INFO - Checking if FA 0002 is DFA
+2025-07-20 20:08:27,053 - INFO - FA 0002 is NFA due to undefined transition: q1 --a--> []
+2025-07-20 20:08:27,053 - INFO - Checking if FA 0003 is DFA
+2025-07-20 20:08:27,053 - INFO - FA 0003 is NFA due to multiple transitions: A --x--> ['A', 'B']
+2025-07-20 20:08:29,458 - INFO - Checking if FA 0003 is DFA
+2025-07-20 20:08:29,459 - INFO - FA 0003 is NFA due to multiple transitions: A --x--> ['A', 'B']
+2025-07-20 20:08:29,459 - INFO - Starting NFA to DFA conversion for 0003
+2025-07-20 20:08:29,459 - INFO - Generating next FA ID
+2025-07-20 20:08:29,459 - INFO - Generated new FA ID: 0004
+2025-07-20 20:08:29,459 - INFO - Generated new ID 0004 for DFA
+2025-07-20 20:08:29,459 - INFO - Converting NFA 0003 to DFA
+2025-07-20 20:08:29,459 - INFO - Checking if FA 0003 is DFA
+2025-07-20 20:08:29,459 - INFO - FA 0003 is NFA due to multiple transitions: A --x--> ['A', 'B']
+2025-07-20 20:08:29,459 - INFO - Computing epsilon closure for states {'A'} in FA 0003
+2025-07-20 20:08:29,459 - INFO - Epsilon closure for {'A'}: {'A'}
+2025-07-20 20:08:29,459 - INFO - Computing epsilon closure for states {'A', 'B'} in FA 0003
+2025-07-20 20:08:29,459 - INFO - Epsilon closure for {'A', 'B'}: {'A', 'B'}
+2025-07-20 20:08:29,459 - INFO - Computing epsilon closure for states {'A'} in FA 0003
+2025-07-20 20:08:29,459 - INFO - Epsilon closure for {'A'}: {'A'}
+2025-07-20 20:08:29,459 - INFO - Computing epsilon closure for states {'A', 'B'} in FA 0003
+2025-07-20 20:08:29,459 - INFO - Epsilon closure for {'A', 'B'}: {'A', 'B'}
+2025-07-20 20:08:29,459 - INFO - Computing epsilon closure for states {'C'} in FA 0003
+2025-07-20 20:08:29,459 - INFO - Epsilon closure for {'C'}: {'C'}
+2025-07-20 20:08:29,459 - INFO - Computing epsilon closure for states {'A'} in FA 0003
+2025-07-20 20:08:29,459 - INFO - Epsilon closure for {'A'}: {'A'}
+2025-07-20 20:08:29,459 - INFO - Computing epsilon closure for states {'B'} in FA 0003
+2025-07-20 20:08:29,459 - INFO - Epsilon closure for {'B'}: {'B'}
+2025-07-20 20:08:29,459 - INFO - Computing epsilon closure for states {'A', 'B'} in FA 0003
+2025-07-20 20:08:29,459 - INFO - Epsilon closure for {'A', 'B'}: {'A', 'B'}
+2025-07-20 20:08:29,459 - INFO - Computing epsilon closure for states {'C'} in FA 0003
+2025-07-20 20:08:29,459 - INFO - Epsilon closure for {'C'}: {'C'}
+2025-07-20 20:08:29,459 - INFO - Computing epsilon closure for states {'C'} in FA 0003
+2025-07-20 20:08:29,459 - INFO - Epsilon closure for {'C'}: {'C'}
+2025-07-20 20:08:29,460 - INFO - Computing epsilon closure for states {'A'} in FA 0003
+2025-07-20 20:08:29,460 - INFO - Epsilon closure for {'A'}: {'A'}
+2025-07-20 20:08:29,460 - INFO - Computing epsilon closure for states {'B'} in FA 0003
+2025-07-20 20:08:29,460 - INFO - Epsilon closure for {'B'}: {'B'}
+2025-07-20 20:08:29,460 - INFO - Computing epsilon closure for states {'C'} in FA 0003
+2025-07-20 20:08:29,460 - INFO - Epsilon closure for {'C'}: {'C'}
+2025-07-20 20:08:29,460 - INFO - Initialized FA FA0004 as DFA
+2025-07-20 20:08:29,460 - INFO - Created DFA FA0004 with states ['s0', 's1', 's2']
+2025-07-20 20:08:29,460 - INFO - Checking if FA FA0004 is DFA
+2025-07-20 20:08:29,460 - INFO - FA FA0004 is DFA
+2025-07-20 20:08:29,460 - INFO - Saving DFA with ID FA0004
+2025-07-20 20:08:29,460 - INFO - Attempting to save FA with ID FA0004
+2025-07-20 20:08:29,461 - INFO - Inserted FA FA0004 into Automata table
+2025-07-20 20:08:29,461 - INFO - Deleted existing transitions for FA FA0004
+2025-07-20 20:08:29,461 - INFO - Inserted transitions for FA FA0004
+2025-07-20 20:08:29,468 - INFO - FA FA0004 saved successfully
+2025-07-20 20:08:29,468 - INFO - Saving conversion record: source=0003, result=FA0004
+2025-07-20 20:08:29,468 - INFO - Saving conversion: source_id=0003, result_id=FA0004, type=NFA_TO_DFA
+2025-07-20 20:08:29,476 - INFO - Conversion saved: 0003 -> FA0004 (NFA_TO_DFA)
+2025-07-20 20:08:29,476 - INFO - Loading FAs after conversion
+2025-07-20 20:08:29,476 - INFO - Loading all FAs from database
+2025-07-20 20:08:29,476 - INFO - Initialized FA 0001 as NFA
+2025-07-20 20:08:29,476 - INFO - Loaded FA 0001 successfully
+2025-07-20 20:08:29,476 - INFO - Initialized FA 0002 as NFA
+2025-07-20 20:08:29,476 - INFO - Loaded FA 0002 successfully
+2025-07-20 20:08:29,476 - INFO - Initialized FA 0003 as NFA
+2025-07-20 20:08:29,476 - INFO - Loaded FA 0003 successfully
+2025-07-20 20:08:29,476 - INFO - Initialized FA FA0004 as DFA
+2025-07-20 20:08:29,476 - INFO - Loaded FA FA0004 successfully
+2025-07-20 20:08:29,476 - INFO - Loaded 4 FAs from database
+2025-07-20 20:08:30,632 - INFO - Conversion successful: DFA FA0004 created
+2025-07-20 20:09:10,803 - INFO - Checking if FA 0003 is DFA
+2025-07-20 20:09:10,803 - INFO - FA 0003 is NFA due to multiple transitions: A --x--> ['A', 'B']
+2025-07-20 20:09:10,803 - INFO - Starting NFA to DFA conversion for 0003
+2025-07-20 20:09:10,803 - INFO - Generating next FA ID
+2025-07-20 20:09:10,803 - INFO - Generated new FA ID: FA0005
+2025-07-20 20:09:10,804 - INFO - Generated new ID FA0005 for DFA
+2025-07-20 20:09:10,804 - INFO - Converting NFA 0003 to DFA
+2025-07-20 20:09:10,804 - INFO - Checking if FA 0003 is DFA
+2025-07-20 20:09:10,804 - INFO - FA 0003 is NFA due to multiple transitions: A --x--> ['A', 'B']
+2025-07-20 20:09:10,804 - INFO - Computing epsilon closure for states {'A'} in FA 0003
+2025-07-20 20:09:10,804 - INFO - Epsilon closure for {'A'}: {'A'}
+2025-07-20 20:09:10,804 - INFO - Computing epsilon closure for states {'A', 'B'} in FA 0003
+2025-07-20 20:09:10,804 - INFO - Epsilon closure for {'A', 'B'}: {'A', 'B'}
+2025-07-20 20:09:10,804 - INFO - Computing epsilon closure for states {'A'} in FA 0003
+2025-07-20 20:09:10,804 - INFO - Epsilon closure for {'A'}: {'A'}
+2025-07-20 20:09:10,804 - INFO - Computing epsilon closure for states {'A', 'B'} in FA 0003
+2025-07-20 20:09:10,804 - INFO - Epsilon closure for {'A', 'B'}: {'A', 'B'}
+2025-07-20 20:09:10,804 - INFO - Computing epsilon closure for states {'C'} in FA 0003
+2025-07-20 20:09:10,804 - INFO - Epsilon closure for {'C'}: {'C'}
+2025-07-20 20:09:10,804 - INFO - Computing epsilon closure for states {'A'} in FA 0003
+2025-07-20 20:09:10,804 - INFO - Epsilon closure for {'A'}: {'A'}
+2025-07-20 20:09:10,804 - INFO - Computing epsilon closure for states {'B'} in FA 0003
+2025-07-20 20:09:10,804 - INFO - Epsilon closure for {'B'}: {'B'}
+2025-07-20 20:09:10,804 - INFO - Computing epsilon closure for states {'A', 'B'} in FA 0003
+2025-07-20 20:09:10,804 - INFO - Epsilon closure for {'A', 'B'}: {'A', 'B'}
+2025-07-20 20:09:10,804 - INFO - Computing epsilon closure for states {'C'} in FA 0003
+2025-07-20 20:09:10,804 - INFO - Epsilon closure for {'C'}: {'C'}
+2025-07-20 20:09:10,804 - INFO - Computing epsilon closure for states {'C'} in FA 0003
+2025-07-20 20:09:10,804 - INFO - Epsilon closure for {'C'}: {'C'}
+2025-07-20 20:09:10,804 - INFO - Computing epsilon closure for states {'A'} in FA 0003
+2025-07-20 20:09:10,804 - INFO - Epsilon closure for {'A'}: {'A'}
+2025-07-20 20:09:10,804 - INFO - Computing epsilon closure for states {'B'} in FA 0003
+2025-07-20 20:09:10,804 - INFO - Epsilon closure for {'B'}: {'B'}
+2025-07-20 20:09:10,804 - INFO - Computing epsilon closure for states {'C'} in FA 0003
+2025-07-20 20:09:10,804 - INFO - Epsilon closure for {'C'}: {'C'}
+2025-07-20 20:09:10,804 - INFO - Initialized FA FA0005 as DFA
+2025-07-20 20:09:10,804 - INFO - Created DFA FA0005 with states ['s0', 's1', 's2']
+2025-07-20 20:09:10,805 - INFO - Checking if FA FA0005 is DFA
+2025-07-20 20:09:10,805 - INFO - FA FA0005 is DFA
+2025-07-20 20:09:10,805 - INFO - Saving DFA with ID FA0005
+2025-07-20 20:09:10,805 - INFO - Attempting to save FA with ID FA0005
+2025-07-20 20:09:10,806 - INFO - Inserted FA FA0005 into Automata table
+2025-07-20 20:09:10,806 - INFO - Deleted existing transitions for FA FA0005
+2025-07-20 20:09:10,806 - INFO - Inserted transitions for FA FA0005
+2025-07-20 20:09:10,813 - INFO - FA FA0005 saved successfully
+2025-07-20 20:09:10,813 - INFO - Saving conversion record: source=0003, result=FA0005
+2025-07-20 20:09:10,813 - INFO - Saving conversion: source_id=0003, result_id=FA0005, type=NFA_TO_DFA
+2025-07-20 20:09:10,820 - INFO - Conversion saved: 0003 -> FA0005 (NFA_TO_DFA)
+2025-07-20 20:09:10,820 - INFO - Loading FAs after conversion
+2025-07-20 20:09:10,820 - INFO - Loading all FAs from database
+2025-07-20 20:09:10,820 - INFO - Initialized FA 0001 as NFA
+2025-07-20 20:09:10,820 - INFO - Loaded FA 0001 successfully
+2025-07-20 20:09:10,820 - INFO - Initialized FA 0002 as NFA
+2025-07-20 20:09:10,821 - INFO - Loaded FA 0002 successfully
+2025-07-20 20:09:10,821 - INFO - Initialized FA 0003 as NFA
+2025-07-20 20:09:10,821 - INFO - Loaded FA 0003 successfully
+2025-07-20 20:09:10,821 - INFO - Initialized FA FA0004 as DFA
+2025-07-20 20:09:10,821 - INFO - Loaded FA FA0004 successfully
+2025-07-20 20:09:10,821 - INFO - Initialized FA FA0005 as DFA
+2025-07-20 20:09:10,821 - INFO - Loaded FA FA0005 successfully
+2025-07-20 20:09:10,821 - INFO - Loaded 5 FAs from database
+2025-07-20 20:09:12,145 - INFO - Conversion successful: DFA FA0005 created
+2025-07-20 20:09:42,854 - INFO - Checking if FA 0001 is DFA
+2025-07-20 20:09:42,854 - INFO - FA 0001 is DFA
+2025-07-20 20:09:42,854 - INFO - Checking if FA 0002 is DFA
+2025-07-20 20:09:42,854 - INFO - FA 0002 is NFA due to undefined transition: q1 --a--> []
+2025-07-20 20:09:42,854 - INFO - Checking if FA 0003 is DFA
+2025-07-20 20:09:42,854 - INFO - FA 0003 is NFA due to multiple transitions: A --x--> ['A', 'B']
+2025-07-20 20:09:42,854 - INFO - Checking if FA FA0004 is DFA
+2025-07-20 20:09:42,854 - INFO - FA FA0004 is DFA
+2025-07-20 20:09:42,854 - INFO - Checking if FA FA0005 is DFA
+2025-07-20 20:09:42,854 - INFO - FA FA0005 is DFA
+2025-07-20 20:09:42,854 - INFO - Checking if FA 0001 is DFA
+2025-07-20 20:09:42,854 - INFO - FA 0001 is DFA
+2025-07-20 20:09:42,854 - INFO - Checking if FA 0002 is DFA
+2025-07-20 20:09:42,854 - INFO - FA 0002 is NFA due to undefined transition: q1 --a--> []
+2025-07-20 20:09:42,854 - INFO - Checking if FA 0003 is DFA
+2025-07-20 20:09:42,854 - INFO - FA 0003 is NFA due to multiple transitions: A --x--> ['A', 'B']
+2025-07-20 20:09:42,854 - INFO - Checking if FA FA0004 is DFA
+2025-07-20 20:09:42,854 - INFO - FA FA0004 is DFA
+2025-07-20 20:09:42,855 - INFO - Checking if FA FA0005 is DFA
+2025-07-20 20:09:42,855 - INFO - FA FA0005 is DFA
+2025-07-20 20:09:45,115 - INFO - Starting DFA minimization for FA0005
+2025-07-20 20:09:45,115 - INFO - Generating next FA ID
+2025-07-20 20:09:45,115 - INFO - Generated new FA ID: FA0006
+2025-07-20 20:09:45,115 - INFO - Generated new ID FA0006 for minimized DFA
+2025-07-20 20:09:45,116 - INFO - Minimizing DFA FA0005
+2025-07-20 20:09:45,116 - INFO - Checking if FA FA0005 is DFA
+2025-07-20 20:09:45,116 - INFO - FA FA0005 is DFA
+2025-07-20 20:09:45,116 - INFO - Computing reachable states for FA FA0005
+2025-07-20 20:09:45,116 - INFO - Reachable states for FA FA0005: {'s1', 's0', 's2'}
+2025-07-20 20:09:45,116 - INFO - Partitioning states for DFA FA0005
+2025-07-20 20:09:45,116 - INFO - Partitions for DFA FA0005: [{'s1'}, {'s1'}, {'s0'}, {'s0'}, {'s2'}, {'s2'}, {'s2'}, {'s2'}]
+2025-07-20 20:09:45,116 - INFO - Initialized FA FA0006 as DFA
+2025-07-20 20:09:45,116 - INFO - Created minimized DFA FA0006 with 8 states
+2025-07-20 20:09:45,116 - INFO - Saving minimized DFA with ID FA0006
+2025-07-20 20:09:45,116 - INFO - Attempting to save FA with ID FA0006
+2025-07-20 20:09:45,117 - INFO - Inserted FA FA0006 into Automata table
+2025-07-20 20:09:45,117 - INFO - Deleted existing transitions for FA FA0006
+2025-07-20 20:09:45,118 - INFO - Inserted transitions for FA FA0006
+2025-07-20 20:09:45,124 - INFO - FA FA0006 saved successfully
+2025-07-20 20:09:45,124 - INFO - Saving conversion record: source=FA0005, result=FA0006
+2025-07-20 20:09:45,124 - INFO - Saving conversion: source_id=FA0005, result_id=FA0006, type=DFA_MINIMIZATION
+2025-07-20 20:09:45,132 - INFO - Conversion saved: FA0005 -> FA0006 (DFA_MINIMIZATION)
+2025-07-20 20:09:45,132 - INFO - Loading FAs after minimization
+2025-07-20 20:09:45,132 - INFO - Loading all FAs from database
+2025-07-20 20:09:45,132 - INFO - Initialized FA 0001 as NFA
+2025-07-20 20:09:45,132 - INFO - Loaded FA 0001 successfully
+2025-07-20 20:09:45,132 - INFO - Initialized FA 0002 as NFA
+2025-07-20 20:09:45,132 - INFO - Loaded FA 0002 successfully
+2025-07-20 20:09:45,132 - INFO - Initialized FA 0003 as NFA
+2025-07-20 20:09:45,132 - INFO - Loaded FA 0003 successfully
+2025-07-20 20:09:45,132 - INFO - Initialized FA FA0004 as DFA
+2025-07-20 20:09:45,132 - INFO - Loaded FA FA0004 successfully
+2025-07-20 20:09:45,132 - INFO - Initialized FA FA0005 as DFA
+2025-07-20 20:09:45,132 - INFO - Loaded FA FA0005 successfully
+2025-07-20 20:09:45,132 - INFO - Initialized FA FA0006 as DFA
+2025-07-20 20:09:45,132 - INFO - Loaded FA FA0006 successfully
+2025-07-20 20:09:45,132 - INFO - Loaded 6 FAs from database
+2025-07-20 20:09:46,194 - INFO - Minimization successful: DFA FA0006 created
+2025-07-20 20:11:13,735 - INFO - Closing database connection
+2025-07-20 20:11:13,736 - INFO - Closing database connection
